@@ -7,7 +7,8 @@
 # Usage: bash download_neuro_dub.sh playlist.csv [output_dir]
 
 CSV="$1"
-OUTPUT_DIR="${2:-./output}"
+CSV_NAME="$(basename "$CSV" .csv)"
+OUTPUT_DIR="${2:-./output}/$CSV_NAME"
 
 if [[ -z "$CSV" ]]; then
   echo "Použití: $0 playlist.csv [output_dir]"
